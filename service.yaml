@@ -1,0 +1,17 @@
+# Service Configuration
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+  namespace: devops-assesement
+  labels:
+    app: my-app
+spec:
+  selector:
+    app: my-app
+  ports:
+  - protocol: TCP
+    port: 80 # Service port
+    targetPort: 8080 # Container port
+    nodePort: 30007 # Node port (for NodePort type)
+  type: NodePort
